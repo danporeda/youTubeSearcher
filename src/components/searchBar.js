@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function SearchBar() {
+function SearchBar({ onSubmit }) {
   const [term, setTerm] = useState('');
 
   const handleChange = (event) => {
@@ -10,7 +10,7 @@ function SearchBar() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(`TODO: create API fetch with: ${term}`)
+    onSubmit(term);
   }
 
   return (

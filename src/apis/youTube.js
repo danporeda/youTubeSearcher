@@ -12,9 +12,14 @@ export default axios.create({
 })
 
 // async function getVideos(term) {
-//   const results = await axios.get('https://www.googleapis.com/youtube/v3', {
+//   const results = await axios.get('https://www.googleapis.com/youtube/v3/search', {
 //     params: {
-
+//       part: 'snippet',
+//       maxResults: 5,
+//       key: KEY,
+//       q: term
 //     }
 //   })
 // }
+
+// export { getVideos };
