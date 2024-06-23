@@ -5,6 +5,7 @@ import VideoList from './VideoList';
 
 function App() {
   const [videos, setVideos] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const onFormSubmit = async (term) => {
     const res = await youTube.get('/search', {
@@ -13,15 +14,18 @@ function App() {
       }
     });
     
-    console.log(res.data.items)
     setVideos(res.data.items);
+  }
+
+  const onVideoSelect = (video) => {
+    setSelectedVideo(video);
   }
 
   return <div>
     <div className="ui container">
     <SearchBar onSubmit={onFormSubmit} />
     </div>
-    <VideoList videos={videos} />
+    <VideoList onVideoSelect={onVideoSelect} videos={videos} />
   </div>
     
     
