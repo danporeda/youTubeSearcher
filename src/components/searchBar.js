@@ -14,7 +14,7 @@ function SearchBar({ onSubmit }) {
   }
 
   return (
-  <div className="search-bar ui segment">
+  <div className="search-bar ui segment" style={{backgroundColor: 'dodgerblue'}}>
     <form className="ui form" onSubmit={handleSubmit}>
       <div className="field">
         <label>Video Search</label>
